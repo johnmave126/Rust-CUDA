@@ -57,7 +57,7 @@ macro_rules! f32_intrinsic {
         #[cfg(not(any(target_arch = "nvptx", target_arch = "nvptx64")))]
         let val = $self.$func($($param),*);
         #[cfg(any(target_arch = "nvptx", target_arch = "nvptx64"))]
-        let val = unsafe { intrinsics::concat_idents!($func, f)($self, $($param),*) };
+        let val = paste::paste! { unsafe { intrinsics::[<$func f>]($self, $($param),*) } };
         val
     }};
 }

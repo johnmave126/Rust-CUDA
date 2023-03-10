@@ -9,3 +9,4 @@ readme = "../../README.md"
 
 [dependencies]
 cuda_std_macros = { version = "0.2", path = "../cuda_std_macros" }
+paste = "1.0.5"
